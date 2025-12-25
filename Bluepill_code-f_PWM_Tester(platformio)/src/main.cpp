@@ -3,14 +3,17 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
+#define OLED_SDA PB11
+#define OLED_SCL PB10
+
 // --- DONANIM AYARLARI ---
 #define ESC_PIN   PA8
 #define LED_PIN   PC13
 
 // --- BUTON AYARLARI ---
-#define BTN_MODE  PA9
-#define BTN_UP    PA10
-#define BTN_DOWN  PA11
+#define BTN_MODE  PC14
+#define BTN_UP    PC15
+#define BTN_DOWN  PA2
 
 // --- MOSFET (BTS432E2) AYARLARI ---
 // PB0: BTS432 IN (Giriş) Pini -> HIGH olunca ESC'ye güç verir.
@@ -50,6 +53,10 @@ void runMOSFETControl();
 void setup() {
   pinMode(LED_PIN, OUTPUT);
   pinMode(ESC_PIN, OUTPUT);
+
+  Wire.setSDA(OLED_SDA);
+  Wire.setSCL(OLED_SCL);
+  Wire.begin();
 
   // Butonlar
   pinMode(BTN_MODE, INPUT_PULLUP);
