@@ -11,16 +11,16 @@
 #define LED_PIN   PC13
 
 // --- BUTON AYARLARI ---
-#define BTN_MODE  PC14
-#define BTN_UP    PC15
-#define BTN_DOWN  PA2
+#define BTN_MODE  PA4
+#define BTN_UP    PC14
+#define BTN_DOWN  PA7
 
 // --- MOSFET (BTS432E2) AYARLARI ---
 // PB4: MOSFET IN (Giriş) Pini -> HIGH olunca ESC'ye güç verir.
 // PB5: Analog Sense Enable Pini -> Sürekli HIGH tutulur (analog sense'i aktif eder)
 // PA0 (A0): MOSFET Current Sense ve Feedback Pini -> ADC ile okunur.
-#define MOSFET_INPUT   PB5
-#define MOSFET_ANALOG_SENSE_ENABLE PB4  // Analog sense enable pini - sürekli HIGH
+#define MOSFET_INPUT   PB9
+#define MOSFET_ANALOG_SENSE_ENABLE PB5 // Analog sense enable pini - sürekli HIGH
 #define MOSFET_CURRENT_SENSE PA0  // A0 pini - ADC ile akım okuma
 #define R_SENSE 2200.0f       // Sense direnci (Oh m cinsinden)
 #define K_FACTOR 16710.0f     // VN7004CH için Datasheet Typ değeri (15A civarı)
